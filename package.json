@@ -1,7 +1,7 @@
 {
-  "name": "mega-dealer-scraper",
+  "name": "car-deal-genius",
   "version": "1.0.0",
-  "description": "Smart dealership scraper with multi-dealer support and advanced rater",
+  "description": "A car deal rating scraper app.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -10,7 +10,13 @@
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "json2csv": "^6.0.0-alpha.2",
+    "json2csv": "^6.0.0",
     "puppeteer": "^21.3.8"
-  }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": "Timekeeper-27",
+  "license": "MIT"
 }
