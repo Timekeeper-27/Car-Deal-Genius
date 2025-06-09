@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧩 Code Definer - Car Deal Rater</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div style="padding: 20px; text-align: left;">
+  <a href="index.html" style="
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background 0.3s;
+  ">🏠 Home</a>
+</div>
+  <button id="toggle-dark-mode" class="btn" style="float:right;">🌙 Dark Mode</button>
+  <script>
+    document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const mode = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
+      document.getElementById('toggle-dark-mode').textContent = mode;
+    });
+  </script>
+
+  <h1>🧩 Code Definer: Rate Your Car Deals</h1>
+  <p>Enter a URL with car listings, and we'll rate them for you!</p>
+
+  <form id="scrape-form">
+    <input type="text" id="url" placeholder="Enter car listings URL" required style="width: 60%;">
+    <button type="submit">Rate Deals 🚗</button>
+  </form>
+
+  <div id="results"></div>
+
+  <script>
+    const form = document.getElementById('scrape-form');
+    const resultsDiv = document.getElementById('results');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      resultsDiv.innerHTML = '⏳ Fetching and rating deals...';
+
+      const url = document.getElementById('url').value;
+
+      try {
+        const response = await fetch('/scrape', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+        if (!response.ok) throw new Error('Scraping failed');
+
+        const data = await response.json();
+        const listings = data.listings;
+
+        if (listings.length === 0) {
+          resultsDiv.innerHTML = '<p>No listings found. 😔</p>';
+          return;
+        }
+
+        let html = '<h2>🚘 Rated Listings:</h2><ul>';
+        listings.forEach(listing => {
+          html += `<li>
+            <strong>${listing.title}</strong><br>
+            Price: ${listing.price}<br>
+            Score: <strong>${listing.score}</strong>/100<br>
+            <a href="${listing.link}" target="_blank">View Listing</a><br>
+            <img src="${listing.image}" alt="Car Image" style="max-width: 300px;">
+          </li><hr>`;
+        });
+        html += '</ul>';
+        resultsDiv.innerHTML = html;
+      } catch (error) {
+        console.error(error);
+        resultsDiv.innerHTML = '❌ Error fetching deals. Please try again.';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "mega-dealer-scraper",
+  "version": "1.0.0",
+  "description": "Smart dealership scraper with multi-dealer support and advanced rater",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "json2csv": "^6.0.0-alpha.2",
+    "puppeteer": "^21.3.8"
+  }
+}

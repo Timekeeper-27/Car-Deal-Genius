@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How Tariffs Impact Car Prices</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div style="padding: 20px; text-align: left;">
+  <a href="index.html" style="
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background 0.3s;
+  ">🏠 Home</a>
+</div>
+<button id="toggle-dark-mode" class="btn" style="float:right;">🌙 Dark Mode</button>
+<script>
+  document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const mode = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
+    document.getElementById('toggle-dark-mode').textContent = mode;
+  });
+</script>
+  <nav>
+    <a href="/">🏠 Home</a> | 
+    <a href="how-we-rate.html">How We Rate Deals</a> | 
+    <a href="contribute.html">How to Add a Site</a>
+  </nav>
+  <h1>?? How Tariffs Impact Car Prices</h1>
+  <p>Think of tariffs as toll booths for products from other countries. When the government charges extra for cars coming into the country, that extra fee gets passed to you — the buyer. ??</p>
+  <p>Plus, things like inflation (general price hikes) and supply chain hiccups (delays in getting parts) also drive up car prices.</p>
+  <p>So yeah — the world gets weird, and your car gets pricey. But don’t sweat it — we’re here to help you spot the good deals!</p>
+  <a class="btn" href="/">?? Back Home</a>
+</body>
+</html>

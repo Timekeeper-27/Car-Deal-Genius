@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Add a Car Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="toggle-dark-mode" class="btn" style="float:right;">🌙 Dark Mode</button>
+<script>
+  document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const mode = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
+    document.getElementById('toggle-dark-mode').textContent = mode;
+  });
+</script>
+  <nav>
+    <a href="/">🏡 Home</a> | 
+    <a href="tariffs-impact.html">Tariffs and Prices</a> | 
+    <a href="how-we-rate.html">How We Rate</a>
+  </nav>
+  <h1>🛠️ How to Add New Car Sites</h1>
+  <p>Want to help? Add new car listing formats!</p>
+  <ol>
+    <li>Open a site with car listings.</li>
+    <li>Right-click a car title — hit Inspect.</li>
+    <li>Find a good <strong>class</strong> name for:
+      <ul>
+        <li>Container (whole car block)</li>
+        <li>Title (name of car)</li>
+        <li>Price</li>
+        <li>Image</li>
+        <li>Link</li>
+      </ul>
+    </li>
+  </ol>
+  <p>Then <a href="formatter-saver.html" class="btn">Save a New Format</a> or check out our <a href="deal-rating.html" class="btn">Deal Rating</a>!</p>
+  <a class="btn" href="/">⬅️ Back Home</a>
+</body>
+</html>

@@ -1,0 +1,9 @@
+[]
+{
+  "brand": "Detected - 2025-06-09T03:13:55.289Z",
+  "container": ".ddc-wrapper",
+  "title": ".ddc-wrapper .ddc-title",
+  "price": ".ddc-wrapper .ddc-price",
+  "image": ".ddc-wrapper .ddc-image img",
+  "link": ".ddc-wrapper a"
+}

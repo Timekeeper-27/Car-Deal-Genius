@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formatter Saver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div style="padding: 20px; text-align: left;">
+  <a href="index.html" style="
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background 0.3s;
+  ">🏠 Home</a>
+</div>
+<button id="toggle-dark-mode" class="btn" style="float:right;">🌙 Dark Mode</button>
+<script>
+  document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const mode = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
+    document.getElementById('toggle-dark-mode').textContent = mode;
+  });
+</script>
+  <h1>📝 Save a New Formatter</h1>
+  <form method="POST" action="/save-formatter">
+    <label>Brand Name: <input name="brand" required></label><br><br>
+    <label>Container Selector: <input name="container" required></label><br><br>
+    <label>Title Selector: <input name="title" required></label><br><br>
+    <label>Price Selector: <input name="price" required></label><br><br>
+    <label>Image Selector: <input name="image" required></label><br><br>
+    <label>Link Selector: <input name="link" required></label><br><br>
+    <button type="submit" class="btn">Save</button>
+  </form>
+  <a class="btn" href="/">⬅️ Back Home</a>
+</body>
+</html>

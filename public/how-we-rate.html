@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How We Rate Car Deals</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div style="padding: 20px; text-align: left;">
+  <a href="index.html" style="
+    background: #0072ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background 0.3s;
+  ">🏠 Home</a>
+</div>
+<button id="toggle-dark-mode" class="btn" style="float:right;">🌙 Dark Mode</button>
+<script>
+  document.getElementById('toggle-dark-mode').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const mode = document.body.classList.contains('dark-mode') ? '🌞 Light Mode' : '🌙 Dark Mode';
+    document.getElementById('toggle-dark-mode').textContent = mode;
+  });
+</script>
+  <nav>
+    <a href="/">🏡 Home</a> | 
+    <a href="tariffs-impact.html">Tariffs and Prices</a> | 
+    <a href="contribute.html">How to Add a Site</a>
+  </nav>
+  <h1>📊 How We Rate Car Deals</h1>
+  <p>We give each car a score, kind of like a grade. Here’s what we look at:</p>
+  <ul>
+    <li><strong>Price:</strong> Cheaper than market = 🌟</li>
+    <li><strong>Mileage:</strong> Lower mileage = 👍</li>
+    <li><strong>Year:</strong> Newer = 😎</li>
+    <li><strong>Features:</strong> Leather seats, sunroof, navigation? Bonus points!</li>
+    <li><strong>Warranty:</strong> Certified cars get extra love.</li>
+  </ul>
+  <p>All that adds up to a score out of 100 — higher is better!</p>
+  <a class="btn" href="/">⬅️ Back Home</a>
+</body>
+</html>
